@@ -5,9 +5,13 @@ services:
       context: .
     ports: 
       - "80:8000"
+    volumes:
+      - c:/Users/J31640/Projects/handson-docker:/code
     depends_on: [db]
   db:
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: handson
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - c:/mnt/mysql:/var/lib/mysql

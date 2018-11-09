@@ -120,7 +120,7 @@
     web:
       build:
         context: .
-        ports: 
+      ports: 
          - "80:80"
   ```
 
@@ -148,7 +148,7 @@ http://docs.docker.jp/compose/django.html
 2. コンテナを起動する
 　※docker imageをpullするので、テザリング等で実施するのはお控えください。
     - ```cd docker-handson```
-    - ```docker-compose up```
+    - ```docker-compose run app python mysite/manage.py runserver```
 
 3. 動作を確認する
     - ブラウザから```http://localhost/api/v1/messages/1```を表示
