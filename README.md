@@ -61,7 +61,7 @@
 
   例)
   ```
-  docker run -d -p 80:18080 nginx
+  docker run -d -p 18080:80 nginx
   ```
   起動したらブラウザでhttp://localhost:18080へアクセス  
   nginxのトップページが表示されれば成功

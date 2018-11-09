@@ -2,8 +2,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'handson',
-        'USER': 'user',
-        'PASSWORD': 'pass',
+        'USER': 'root',
+        'PASSWORD': 'password',
         'HOST': 'db',
         'PORT': '3306',
         'OPTIONS': {
