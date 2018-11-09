@@ -122,10 +122,6 @@
         context: .
         ports: 
          - "80:80"
-        image:
-          nidstyle3/nginx:latest
-    deploy:
-      replicas: 1
   ```
 
 - docker-composeでの起動
