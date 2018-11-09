@@ -72,7 +72,7 @@
   ```
 - コンテナの詳細表示
   ```
-  docker insepct <コンテナID or コンテナ名>
+  docker inspect <コンテナID or コンテナ名>
   ```
 - コンテナのログ表示
   ```
