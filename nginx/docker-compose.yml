@@ -5,10 +5,3 @@ services:
       context: .
     ports: 
       - "80:80"
-    depends_on:
-      - db  
-  db:
-    image: mysql
-    volumes:
-      - "c:/Users/J31640/mnt/mysql:/var/lib/mysql"
-    

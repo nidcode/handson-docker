@@ -141,6 +141,9 @@
 http://docs.docker.jp/compose/django.html
 
 ### ハンズオンのイメージ
+
+
+### 初期構成
 ![初期構成](./images/handson-init.png "ハンズオン初期構成")
 
 1. 当リポジトリをcloneする
