@@ -126,7 +126,10 @@ Docker Composeを使用すると、複数のコンテナを同時に起動でき
       ports: 
          - "80:80"
   ```
-
+- build
+  ```
+  docker-compose build --build-arg http_proxy=http://proxy:port --build-arg https_proxy=http://proxy:port
+  ```
 - docker-composeでの起動
   ```
   docker-compose up
