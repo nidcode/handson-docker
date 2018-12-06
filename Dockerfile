@@ -1,5 +1,4 @@
 FROM python:3.7-alpine
-MAINTAINER "handson user" <>
 RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/

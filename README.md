@@ -112,6 +112,9 @@
   ```
 
 ### Docker Compose
+Docker Composeを使用すると、複数のコンテナを同時に起動できます。  
+また、コンテナ同士を接続したり、起動時のパラメータをセットできます。
+
 #### オレオレnginxコンテナを Docker Compose で起動しよう
 - docker-compose.ymlの作成
   ```
@@ -133,11 +136,9 @@
 
 ## 開発ハンズオン
 
-これをベースにする
-http://docs.docker.jp/compose/django.html
-
-### ハンズオンのイメージ
-
+### ハンズオンの概要
+アプリケーションサーバーとデータベースをコンテナで起動し、動作確認をローカルで行えるようにします。
+アプリケーションのみ変更したらコンテナを置き換えて動作確認できる流れを体験していただきます。
 
 ### 初期構成
 ![初期構成](./images/handson-init.png "ハンズオン初期構成")
@@ -148,24 +149,33 @@ http://docs.docker.jp/compose/django.html
 2. コンテナを起動する
 　※docker imageをpullするので、テザリング等で実施するのはお控えください。
     - ```cd docker-handson```
-    - ```docker-compose run app python mysite/manage.py runserver```
+    - ```docker-compose run -d -p 80:8000 app python mysite/manage.py runserver 0:8000```
 
 3. 動作を確認する
-    - ブラウザから```http://localhost/api/v1/messages/1```を表示
-    - [wahhoi!]と表示されます
+    - ブラウザから```http://localhost/```を表示
+    - Djangoの初期画面が表示されます
 
-4. コンテナを終了する
-    - ``` docker-compose down```
+4. データベースを初期設定する
+    - ```docker-compose run app python mysite/manage.py migrate```
 
-5. コードを追加する
+5. データベースへの接続情報を環境変数化する
+    - ソースコード内に秘匿情報が入るのはセキュリティ上よくないので、環境変数でセットするように変更します。
+    1. docker-compose.yml
+        ```
+        ```
+    2. mysite/mysite/settings.py
+        ```
+        ```
+
+7. コードを追加する
     - サンプルを見ながら頑張ってみてください
 
-6. コードをテストする
+8. コードをテストする
     - ```docker-compose up```
     - postmanやcurl等でPOSTやDELETEを試してみてください  
     POSTの例
       - ```curl -H 'Content-Type: Application/json' -XPOST http://localhost/api/v1/messages/4 -d '{"message":"wahhooooi!"}'```
       - ```curl http://localhost/api/v1/messages/4```
 
-7. コンテナを終了する
+9. コンテナを終了する
     - ```docker-compose down```
