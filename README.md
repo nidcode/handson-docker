@@ -168,14 +168,9 @@ Docker Composeを使用すると、複数のコンテナを同時に起動でき
         ```
 
 7. コードを追加する
-    - サンプルを見ながら頑張ってみてください
+    - [はじめてのDjangoアプリ作成](https://docs.djangoproject.com/ja/2.1/intro/tutorial01/)
 
 8. コードをテストする
-    - ```docker-compose up```
-    - postmanやcurl等でPOSTやDELETEを試してみてください  
-    POSTの例
-      - ```curl -H 'Content-Type: Application/json' -XPOST http://localhost/api/v1/messages/4 -d '{"message":"wahhooooi!"}'```
-      - ```curl http://localhost/api/v1/messages/4```
 
 9. コンテナを終了する
     - ```docker-compose down```
